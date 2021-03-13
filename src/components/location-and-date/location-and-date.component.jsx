@@ -4,7 +4,7 @@ import {
   LocationHeader,
 } from "./location-and-date.style";
 
-export default ({ location, date }) => {
+const LocationAndDate = ({ location, date }) => {
   return (
     <LocationAndDateContainer>
       <LocationHeader>London, UK</LocationHeader>
@@ -12,3 +12,5 @@ export default ({ location, date }) => {
     </LocationAndDateContainer>
   );
 };
+
+export { LocationAndDate as default };

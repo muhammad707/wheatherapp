@@ -9,7 +9,7 @@ import {
   CurrentTemperatureContainer,
 } from "./current-temperature.style";
 
-export default () => (
+const CurrentTemperature = () => (
   <CurrentTemperatureContainer>
     <IconContainer>
       <img src={logo} alt="" className="temperature-icon" />
@@ -20,3 +20,5 @@ export default () => (
     </ContentContainer>
   </CurrentTemperatureContainer>
 );
+
+export { CurrentTemperature as default };

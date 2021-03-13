@@ -5,7 +5,7 @@ import {
   StatsValueContainer,
 } from "./current-stats.style";
 
-export default () => {
+const CurrentStats = () => {
   return (
     <CurrentStatsContainer>
       <div>
@@ -29,3 +29,5 @@ export default () => {
     </CurrentStatsContainer>
   );
 };
+
+export { CurrentStats as default };
