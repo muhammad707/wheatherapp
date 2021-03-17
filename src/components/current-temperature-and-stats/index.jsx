@@ -2,11 +2,11 @@ import React from "react";
 import CurrentTemperature from "./current-temperature/current-temperature.component";
 import CurrentStats from "./current-stats/current-stats.component";
 
-const TemperatureAndStats = () => {
+const TemperatureAndStats = ({ current }) => {
   return (
     <React.Fragment>
-      <CurrentTemperature />
-      <CurrentStats />
+      <CurrentTemperature {...current} />
+      <CurrentStats {...current} />
     </React.Fragment>
   );
 };

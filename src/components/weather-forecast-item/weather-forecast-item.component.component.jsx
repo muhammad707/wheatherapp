@@ -12,30 +12,29 @@ import {
   WeatherForecastWind,
 } from "./weather-forecast-item.style";
 
-const WeatherForecastItem = () => {
+const WeatherForecastItem = ({ item }) => {
   return (
     <WeatherForecastRow>
       <WeatherForecastDate>
-        Tue
-        <WeatherForecastLabel>30/7</WeatherForecastLabel>
+        {item.day}
+        <WeatherForecastLabel>{item.date}</WeatherForecastLabel>
       </WeatherForecastDate>
       <WeatherForecastLow>
-        10&deg;
+        {item.min_temp}&deg;
         <WeatherForecastLabel>Low</WeatherForecastLabel>
       </WeatherForecastLow>
       <WeatherForecastHigh>
-        21&deg;
+        {item.max_temp}&deg;
         <WeatherForecastLabel>High</WeatherForecastLabel>
       </WeatherForecastHigh>
       <WeatherForecastIcon>
         <MostlySunny />
       </WeatherForecastIcon>
       <WeatherForecastRain>
-        0%
-        <WeatherForecastLabel>Rain</WeatherForecastLabel>
+        {item.rain}%<WeatherForecastLabel>Rain</WeatherForecastLabel>
       </WeatherForecastRain>
       <WeatherForecastWind>
-        12mph
+        {`${item.wind_speed}`}mph
         <WeatherForecastLabel>Wind</WeatherForecastLabel>
       </WeatherForecastWind>
     </WeatherForecastRow>

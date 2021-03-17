@@ -10,15 +10,15 @@ import axios from "axios";
 const getWeatherInformationAsync = async (query) =>
   await axios({
     method: "GET",
-    baseURL: "http://http://api.weatherstack.com",
-    url: `/current/${query}`,
+    // baseURL: "http://http://api.weatherstack.com",
+    url: `/${query}`,
   });
 
-function* getWeatherInformation() {
+function* getWeatherInformation({ payload }) {
   try {
-    const response = yield call(getWeatherInformationAsync);
+    const response = yield call(getWeatherInformationAsync, payload);
     console.log(response);
-    yield put(fetchWeatherInformationSuccess(response));
+    yield put(fetchWeatherInformationSuccess(response.data));
   } catch (e) {
     yield put(fetchWeatherInformationFailure(e));
     console.log(e);

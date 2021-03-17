@@ -7,16 +7,14 @@ import {
   WeatherForecastContainer,
 } from "./weather-forecast.style";
 
-const WeatherForecast = () => {
+const WeatherForecast = ({ forecast }) => {
   return (
     <WeatherForecastList>
       <WeatherForecastHeading>Next 5 days</WeatherForecastHeading>
       <WeatherForecastContainer>
-        <WeatherForecastItem />
-        <WeatherForecastItem />
-        <WeatherForecastItem />
-        <WeatherForecastItem />
-        <WeatherForecastItem />
+        {forecast.map((item) => (
+          <WeatherForecastItem key={item.id} item={item} />
+        ))}
       </WeatherForecastContainer>
     </WeatherForecastList>
   );

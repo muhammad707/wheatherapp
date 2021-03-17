@@ -5,25 +5,25 @@ import {
   StatsValueContainer,
 } from "./current-stats.style";
 
-const CurrentStats = () => {
+const CurrentStats = ({ max_temp, min_temp, wind_speed, rain, astro }) => {
   return (
     <CurrentStatsContainer>
       <div>
-        <StatsValueContainer>23&deg;</StatsValueContainer>
+        <StatsValueContainer>{max_temp}&deg;</StatsValueContainer>
         <StatsLabelContainer>High</StatsLabelContainer>
-        <StatsValueContainer>14&deg;</StatsValueContainer>
+        <StatsValueContainer>{min_temp}&deg;</StatsValueContainer>
         <StatsLabelContainer>Low</StatsLabelContainer>
       </div>
       <div>
-        <StatsValueContainer>7mph</StatsValueContainer>
+        <StatsValueContainer>{wind_speed}mph</StatsValueContainer>
         <StatsLabelContainer>Wind</StatsLabelContainer>
-        <StatsValueContainer>0%</StatsValueContainer>
+        <StatsValueContainer>{rain}%</StatsValueContainer>
         <StatsLabelContainer>Rain</StatsLabelContainer>
       </div>
       <div>
-        <StatsValueContainer>05:27</StatsValueContainer>
+        <StatsValueContainer>{astro.sunrise}</StatsValueContainer>
         <StatsLabelContainer>Sunrise</StatsLabelContainer>
-        <StatsValueContainer>20:57</StatsValueContainer>
+        <StatsValueContainer>{astro.sunset}</StatsValueContainer>
         <StatsLabelContainer>Sunset</StatsLabelContainer>
       </div>
     </CurrentStatsContainer>

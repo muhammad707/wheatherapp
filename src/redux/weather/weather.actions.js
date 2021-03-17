@@ -4,8 +4,9 @@ import {
   FETCH_WEATHER_INFORMATION_SUCCESS,
 } from "./weather.types";
 
-export const fetchWeatherInformationStart = () => ({
+export const fetchWeatherInformationStart = (query) => ({
   type: FETCH_WEATHER_INFORMATION_START,
+  payload: query,
 });
 
 export const fetchWeatherInformationSuccess = (data) => ({

@@ -1,4 +1,5 @@
 import React from "react";
+import * as moment from "moment";
 
 import { ReactComponent as MostlySunny } from "../../assets/mostly-sunny.svg";
 import {
@@ -6,11 +7,11 @@ import {
   HourContainer,
 } from "./weather-by-hour-item.style";
 
-const WeatherByHourItem = () => (
+const WeatherByHourItem = ({ item }) => (
   <WeatherByHourItemContainer>
-    <HourContainer>6am</HourContainer>
+    <HourContainer>{moment(item.time).format("LT")}</HourContainer>
     <MostlySunny />
-    <div>14&deg;</div>
+    <div>{item.temperature}&deg;</div>
   </WeatherByHourItemContainer>
 );
 

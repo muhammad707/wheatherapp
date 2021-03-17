@@ -1,6 +1,5 @@
 import React from "react";
 
-import logo from "../../../assets/mostly-sunny.svg";
 import {
   IconContainer,
   ContentContainer,
@@ -9,14 +8,20 @@ import {
   CurrentTemperatureContainer,
 } from "./current-temperature.style";
 
-const CurrentTemperature = () => (
+const CurrentTemperature = ({
+  temperature,
+  weather_icons,
+  weather_descriptions,
+}) => (
   <CurrentTemperatureContainer>
     <IconContainer>
-      <img src={logo} alt="" className="temperature-icon" />
+      <img src={weather_icons[0]} alt="" className="temperature-icon" />
     </IconContainer>
     <ContentContainer>
-      <TemperatureValueContainer>21&deg;</TemperatureValueContainer>
-      <TemperatureSummaryContainer>Mostly sunny</TemperatureSummaryContainer>
+      <TemperatureValueContainer>{temperature}&deg;</TemperatureValueContainer>
+      <TemperatureSummaryContainer>
+        {weather_descriptions.join(",")}
+      </TemperatureSummaryContainer>
     </ContentContainer>
   </CurrentTemperatureContainer>
 );
