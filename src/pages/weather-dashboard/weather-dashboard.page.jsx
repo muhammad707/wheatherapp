@@ -8,6 +8,7 @@ import WeatherByHour from "../../components/weather-by-hour/weather-by-hour.comp
 import CurrentTemperatureAndStats from "../../components/current-temperature-and-stats";
 import WeatherForecast from "../../components/weather-forecast/weather-forecast.component";
 import LocationAndDate from "../../components/location-and-date/location-and-date.component";
+import WithSpinner from "../../components/with-spinner/with-spinner.component";
 
 const WeatherDashboard = () => {
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const WeatherDashboard = () => {
           <WeatherForecast forecast={weatherState.forecast} />
         </React.Fragment>
       ) : (
-        <span>Loading</span>
+        <WithSpinner />
       )}
     </WeatherDashboardContainer>
   );
