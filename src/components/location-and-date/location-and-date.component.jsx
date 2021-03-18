@@ -9,7 +9,7 @@ import {
 const LocationAndDate = ({ location }) => {
   return (
     <LocationAndDateContainer>
-      <LocationHeader>{`${location.name} ${location.country}`}</LocationHeader>
+      <LocationHeader>{`${location.name}, ${location.country}`}</LocationHeader>
       <div>{moment(location.localtime).format("ll")}</div>
     </LocationAndDateContainer>
   );

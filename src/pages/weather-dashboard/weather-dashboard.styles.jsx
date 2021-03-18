@@ -10,3 +10,9 @@ export const WeatherDashboardContainer = styled.div`
     font-size: 1.1em;
   }
 `;
+
+export const SearchContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100% !important;
+`;
